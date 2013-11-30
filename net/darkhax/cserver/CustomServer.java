@@ -2,6 +2,7 @@ package net.darkhax.cserver;
 
 import java.util.Arrays;
 
+import net.darkhax.cserver.util.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.ModMetadata;
