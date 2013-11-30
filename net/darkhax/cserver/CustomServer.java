@@ -2,8 +2,11 @@ package net.darkhax.cserver;
 
 import java.util.Arrays;
 
+import net.darkhax.cserver.proxy.ClientProxy;
 import net.darkhax.cserver.proxy.ServerProxy;
+import net.darkhax.cserver.util.Config;
 import net.darkhax.cserver.util.Reference;
+import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.ModMetadata;
@@ -31,6 +34,10 @@ public class CustomServer {
 	public void preInit(FMLPreInitializationEvent event) {
 
 		getModMeta(event.getModMetadata());
+		
+		Config.createConfig(event.getSuggestedConfigurationFile());
+		
+		ClientProxy.setServer(Config.serverName, Config.serverAddress);
 	}
 
 	private void getModMeta(ModMetadata meta) {
